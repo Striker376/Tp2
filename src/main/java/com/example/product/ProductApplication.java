@@ -23,9 +23,9 @@ public class ProductApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-       repos.save(new Product(Long.valueOf(1),6000.0,"Tv"));
-       repos.save(new Product(Long.valueOf(2),4500.0,"Imprimante"));
-       repos.save(new Product(Long.valueOf(3),800.0,"headset"));
+       repos.save(new Product(Long.valueOf(1),6000.0,"Ecran"));
+       repos.save(new Product(Long.valueOf(2),4500.0,"Casque"));
+       repos.save(new Product(Long.valueOf(3),800.0,"Console"));
        List<Product> Products =repos.findAll();
        Products.forEach(product -> {
            System.out.println(product);
@@ -44,7 +44,7 @@ public class ProductApplication implements CommandLineRunner {
         Product startwithW = repos.search("W%");
         System.out.println(startwithW);
         System.out.println("--------------------------");
-        List<Product> productContainsv=repos.findProductByNameContains("v");
+        List<Product> productContainsv=repos.findProductByNameContains("r");
         productContainsv.forEach(p->{
             System.out.println(p.getName());
             repos.delete(p);
